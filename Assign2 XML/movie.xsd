@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="movie">
+  <xs:complexType>
+    <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+
+        <xs:element name="year" type="xs:positiveInteger"/>
+
+        <xs:element name="imdb" type="xs:positiveInteger">
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="10"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="rtomatoes" type="xs:string"/>
+
+        <xs:element name="director" type="xs:string"/>
+
+        <xs:element name="genre" type="xs:string">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                <xs:enumeration value="Science Fiction"/>
+                <xs:enumeration value="Mystery"/>
+                <xs:enumeration value="Thriller"/>
+                <xs:enumeration value="Drama"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>

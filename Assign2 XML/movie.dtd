@@ -1,0 +1,10 @@
+
+<!ELEMENT movie (md)>
+<!ELEMENT md (title,year,imdb,rtomatoes, director, genre)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT imdb (#PCDATA)>
+<!ELEMENT rtomatoes (#PCDATA)>
+<!ELEMENT director (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+

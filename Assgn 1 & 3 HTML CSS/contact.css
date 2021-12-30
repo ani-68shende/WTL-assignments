@@ -1,0 +1,210 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap'); */
+
+:root {
+    /* --cyan:#555144; */
+    --cyan: cyan;
+}
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+*::selection {
+    /* background: white; */
+    color: #333;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    width: 1.4rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: #222;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--cyan);
+}
+
+body {
+    background: black;
+    overflow-x: hidden;
+    padding-left: 0rem;
+}
+
+section {
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.btn {
+    padding: .7rem 3rem;
+    background: orange;
+    color: black;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 2rem;
+    border-radius: 5rem;
+}
+
+.btn i {
+    padding: 0 .5rem;
+    font-size: 1.8rem;
+}
+
+.btn:hover {
+    background: var(--cyan);
+}
+
+.heading {
+    text-align: center;
+    margin: 0 6rem;
+    font-size: 4rem;
+    padding: 1rem;
+    border-bottom: .1rem solid white4;
+    color: white;
+}
+
+.heading span {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 35rem;
+    background: #f4df53;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+}
+
+header .user .name {
+    font-size: 3.5rem;
+    color: white;
+}
+
+header .user .post {
+    font-size: 2rem;
+    color: white;
+}
+
+header .navbar {
+    margin-top: 20%;
+    width: 60%;
+}
+
+header .navbar ul {
+    list-style: none;
+    padding: 1rem 3rem;
+}
+
+header .navbar ul li a {
+    margin-top: 25%;
+    display: block;
+    padding: 1rem;
+    /* margin:1.5rem 0; */
+    background: rgb(255, 216, 172);
+    color: rgb(2, 2, 86);
+    font-weight: 700;
+    border: 2px solid white;
+    font-size: 2rem;
+    border-radius: 5rem;
+    transition: transform .2s;
+}
+
+header .navbar ul li a:hover {
+    color: white;
+    background: rgb(129, 129, 255);
+    transform: scale(1.2);
+}
+
+.contact .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact .row .content {
+    flex: 1 1 30rem;
+    padding: 4rem;
+    padding-bottom: 0;
+}
+
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 2rem;
+    margin: 2rem;
+    margin-bottom: 4rem;
+}
+
+.contact .row form .box {
+    border: .2rem solid white;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background: white;
+    color: black;
+    text-transform: none;
+    font-size: 1.7rem;
+    width: 100%;
+}
+
+.contact .row form .box::placeholder {
+    text-transform: capitalize;
+}
+
+.contact .row form .message {
+    height: 15rem;
+    resize: none;
+}
+
+.contact .row .content .title {
+    text-transform: uppercase;
+    color: white;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+.contact .row .content .info h3 {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: cyan;
+    padding: 1rem 0;
+    font-weight: normal;
+}
+
+.contact .row .content .info h3 i {
+    padding-right: 1rem;
+    color: black;
+}
+
+.top {
+    position: fixed;
+    bottom: 7.5rem;
+    right: 2rem;
+    z-index: 100;
+    display: none;
+}

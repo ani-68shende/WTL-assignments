@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS DOM paragraph style</title>
+    <style type="text/css">
+        body {
+            margin: 30px;
+            padding-top: 30px;
+            color: #f1f1f1;
+            background-color: rgb(48, 62, 182);
+        }
+        
+        .center {
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 3px solid pink;
+            width: 50%;
+            color: white;
+        }
+        
+        .center2 {
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 54%;
+        }
+        
+        .center3 {
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 10%;
+        }
+        
+        .text-center {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        label,
+        input {
+            display: block;
+        }
+        
+        #clock {
+            font-size: 50px;
+        }
+        
+        #link_attributes {
+            color: antiquewhite;
+            font-size: 35px;
+        }
+        
+        .create-table {
+            font-size: 30px;
+        }
+        
+        button {
+            background: none;
+            text-decoration: inherit;
+            font-family: system-ui;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            color: #f1f1f1;
+        }
+        
+        .border-gradient {
+            border: 10px solid;
+            border-image-slice: 1;
+            border-width: 5px;
+        }
+        
+        .border-gradient-purple {
+            border-image-source: linear-gradient(to left, red, white);
+        }
+        
+        .border-gradient-green {
+            border-image-source: linear-gradient(to left, yellow, #6cff59);
+        }
+    </style>
+    <script type="text/javascript">
+        setInterval(showTime, 1000);
+
+        function showTime() {
+            let time = new Date();
+            let hour = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+
+            if (hour > 12) {
+                hour -= 12;
+            }
+            if (hour == 0) {
+                hr = 12;
+            }
+
+            hour = hour < 10 ? "0" + hour : hour;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+
+            let currentTime = hour + ":" + min + ":" + sec;
+
+            document.getElementById("clock")
+                .innerHTML = currentTime;
+        }
+        showTime();
+
+        function js_style() {
+            //font styles added by JS:
+            text.style.fontSize = "14pt";
+            text.style.fontFamily = "Comic Sans MS";
+            text.style.color = "green";
+        }
+
+        function getAttributes() {
+            var u = document.getElementById("link_attributes").href;
+            alert('The value of the href attribute of the link is : ' + u);
+            var v = document.getElementById("link_attributes").hreflang;
+            alert('The value of the hreflang attribute of the link is : ' + v);
+            var w = document.getElementById("link_attributes").rel;
+            alert('The value of the rel attribute of the link is : ' + w);
+            var x = document.getElementById("link_attributes").target;
+            alert('The value of the taget attribute of the link is : ' + x);
+            var y = document.getElementById("link_attributes").type;
+            alert('The value of the type attribute of the link is : ' + y);
+        }
+
+        function createTable() {
+            rn = window.prompt("Input number of rows", 1);
+            cn = window.prompt("Input number of columns", 1);
+
+            for (var r = 0; r < parseInt(rn, 10); r++) {
+                var x = document.getElementById('myTable').insertRow(r);
+                for (var c = 0; c < parseInt(cn, 10); c++) {
+                    var y = x.insertCell(c);
+                    y.innerHTML = "[" + r + "," + c + ']';
+                }
+            }
+        }
+
+        function changeBackground() {
+            document.body.style.backgroundColor = document.getElementById("bgchange").value;
+        }
+
+        function font_color() {
+            document.getElementById("clock").style.color = document.getElementById("textchange").value;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="center border-gradient border-gradient-purple">
+        <div id="clock" style='display: inline-block; vertical-align: top;'>
+            0:00:00
+        </div>
+    </div>
+
+    <div class="center border-gradient border-gradient-green">
+        <p style="float:left; padding-left: 60px;">
+            <a id="link_attributes" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://www.google.com/">Go to google</a>
+        </p>
+        <button onclick="getAttributes()">Get  attributes value</button>
+    </div>
+
+    <div class="center border-gradient border-gradient-purple create-table">
+        <div>
+            <h3>Create a Table</h3>
+        </div>
+    </div>
+
+    <div class="center2">
+        <table id="myTable" border="1">
+            <form>
+                <input type="button" class="button border-gradient border-gradient-purple" onclick="createTable()" value="Create the table">
+            </form>
+        </table>
+    </div>
+    <div class="center border-gradient border-gradient-green">
+        <h2>Background color</h2>
+        <div class="demo">
+            <h4>Choose bg color:</h4>
+            <input type="color" id="bgchange" class="center3" value="#ffffff" onchange="changeBackground()" />
+            <h4>Choose text color:</h4>
+            <input type="color" id="textchange" class="center3" value="#ffffff" onchange="font_color()" />
+        </div>
+    </div>
+</body>
+
+</html>

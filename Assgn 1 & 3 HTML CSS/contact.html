@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <script>
+        function validateForm() {
+            let name_val = document.getElementById('fname').value;
+            let email_val = document.getElementById('femail').value;
+            let project_val = document.getElementById('fproject').value;
+            let comment_val = document.getElementById('fcomment').value;
+            if (name_val == '') {
+                alert('Name must be filled out');
+                return false;
+            }
+            //   /^[\w-\.]+@([\w-]+\.)+[\w-]{2,3}$/
+            let mailformat = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,3}$/;
+            if (email_val == '') {
+                alert('Enter email address!');
+                return false;
+            } else {
+                if (!email_val.match(mailformat)) {
+                    alert('Invalid email address!');
+                    return false;
+                }
+            }
+            if (project_val == '') {
+                alert('Project Name must be filled out !');
+                return false;
+            }
+            if (comment_val == '') {
+                alert('Comment must be filled out !');
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>Contact me</span></h1>
+
+        <div class="row">
+            <div class="content">
+                <h3 class="title">contact info</h3>
+                <table class="info">
+                    <tr>
+                        <td>
+                            <h3><i class="fas fa-envelope"></i> ani68shende@gmail.com</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3><i class="fas fa-phone"></i> +123-456-7890</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3><i class="fas fa-phone"></i> +111-222-3333</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>
+                                <i class="fas fa-map-marker-alt"></i> Pune, India - 400001.
+                            </h3>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <form name="myForm" action="next.html" onsubmit="return validateForm();">
+                <input type="text" id="fname" name="fname" placeholder="name" class="box" />
+
+                <input type="email" name="femail" placeholder="email" id="femail" class="box" />
+
+                <input type="text" name="fproject" placeholder="Project" id="fproject" class="box" />
+
+                <textarea name="" id="fcomment" type="text" name="fcomment" cols="30" rows="10" class="box message" placeholder="Description"></textarea>
+
+                <!-- remaining part -->
+                <button type="submit" class="btn">
+						Send <i class="fas fa-paper-plane"></i>
+					</button>
+
+                <a class="btn" href="index.html">Go back</a>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
